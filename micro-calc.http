@@ -1,0 +1,23 @@
+# Request set for manual testing.
+# Works against the local Docker container (docker run -p 8080:8080)
+# and against Minikube via: kubectl port-forward svc/demo-micro 8080:9080 -n reto5
+
+### Add two numbers
+GET http://localhost:8080/add/5/3
+
+### Subtract two numbers
+GET http://localhost:8080/subtract/10/4
+
+### Divide two numbers
+GET http://localhost:8080/divide/8/2
+
+### Divide by zero (handled error path)
+GET http://localhost:8080/divide/8/0
+
+### Show active external configuration (db.user, db.server)
+# Local/Docker: "admin,localhost" (application.properties defaults)
+# Minikube:     "admin-k8s,postgres-k8s.reto5.svc.cluster.local" (ConfigMap)
+GET http://localhost:8080/
+
+### Actuator health (used by Kubernetes liveness/readiness probes)
+GET http://localhost:8080/actuator/health

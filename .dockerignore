@@ -1,0 +1,15 @@
+.git
+.gitignore
+.mvn
+mvnw
+mvnw.cmd
+pom.xml
+src
+docs
+k8s
+*.md
+*.http
+.dockerignore
+Dockerfile
+target/*
+!target/*.jar

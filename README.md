@@ -64,9 +64,14 @@ docker push <tu-usuario-dockerhub>/demo-micro:1
 ```powershell
 minikube start --driver=docker --cpus=2 --memory=4000
 kubectl config current-context   # debe decir "minikube"
-kubectl create namespace reto5
-kubectl apply -f k8s/
+kubectl apply -f k8s/            # el namespace reto5 se crea automáticamente (00-namespace.yaml aplica primero)
 kubectl get pods,svc -n reto5
+```
+
+Si se va a usar el HPA opcional, habilitar antes el addon de métricas:
+
+```powershell
+minikube addons enable metrics-server
 ```
 
 Probar (recomendado — funciona sin importar el driver de Minikube):
@@ -88,7 +93,10 @@ minikube dashboard
 
 ```
 ├── Dockerfile
+├── .dockerignore
+├── micro-calc.http       # set de peticiones de prueba (REST Client / IntelliJ HTTP)
 ├── k8s/                  # manifiestos de Kubernetes (raíz, no anidados)
+│   ├── 00-namespace.yaml # namespace reto5 (aplica primero por orden alfabético)
 │   ├── configmap.yaml
 │   ├── deployment.yaml
 │   ├── service.yaml
@@ -96,6 +104,7 @@ minikube dashboard
 ├── docs/
 │   ├── spec.md
 │   ├── plan.md
+│   ├── REPORTE.md        # reporte de avance / base del PDF final
 │   └── adr/
 └── src/                  # código fuente (en inglés)
 ```
