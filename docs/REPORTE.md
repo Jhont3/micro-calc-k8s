@@ -108,6 +108,7 @@ Tras una auditoría del trabajo contra `final.md` se aplicaron estas mejoras:
 - **`micro-calc.http`**: set de peticiones documentado (misma convención que `equipos.http` del curso), reutilizable para las pruebas locales con Docker y las de Minikube vía port-forward.
 - **`k8s/00-namespace.yaml`**: la carpeta `k8s/` pasó a ser autocontenida (ver §4.7).
 - **Bloque de verificación de herramientas** según la "Verificación sugerida" de la guía (ver §3).
+- **`docs/architecture.md`**: diagrama de arquitectura en Mermaid (build → Docker Hub → Minikube → acceso), visible en VS Code con la extensión `bierner.markdown-mermaid` (instalada) y `Ctrl+Shift+V`.
 
 ### 4.9 Despliegue en Minikube y validación
 

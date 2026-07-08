@@ -105,6 +105,7 @@ minikube dashboard
 │   ├── spec.md
 │   ├── plan.md
 │   ├── REPORTE.md        # reporte de avance / base del PDF final
+│   ├── architecture.md   # diagrama de arquitectura (Mermaid)
 │   └── adr/
 └── src/                  # código fuente (en inglés)
 ```
