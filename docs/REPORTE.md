@@ -12,7 +12,7 @@ Tomar el microservicio Spring Boot base [`gmacastil/micro-calc`](https://github.
 |---|---|---|
 | 1 | URL del repositorio usado o fork del repositorio base | Repo privado creado: `https://github.com/Jhont3/micro-calc-k8s` (no es un fork nativo — ver §4). Pendiente `git push`. |
 | 2 | Dockerfile funcional | Hecho y validado localmente. |
-| 3 | Imagen publicada en Docker Hub | Pendiente — bloqueado en `docker login` del usuario. |
+| 3 | Imagen publicada en Docker Hub | **Hecho** — [`jhont3/demo-micro:1`](https://hub.docker.com/r/jhont3/demo-micro), 212.3 MB, digest `sha256:f6613a402...`. |
 | 4 | Carpeta `k8s/` con manifiestos YAML | Hecho (raíz del repo, no anidada). |
 | 5 | Evidencias de ejecución local con Docker | Hecho — ver §5. |
 | 6 | Evidencias de despliegue en Minikube | Pendiente. |
@@ -92,16 +92,16 @@ Carpeta `k8s/` en la **raíz** del repo (no anidada en `deploy/k8s/` como en `eq
 - Salida de `docker run` + `docker ps` (contenedor `demo-micro1` corriendo, puerto `0.0.0.0:8080->8080/tcp`).
 - Respuestas de los 5 endpoints, en local (jar) y en contenedor Docker (ver §4.5–4.6).
 - `docker exec demo-micro1 whoami` → `appuser` (confirma usuario no-root).
+- `docker login` (ejecutado por el usuario) + `docker push jhont3/demo-micro:1` — capa por capa, exitoso. Captura de la página del repositorio en Docker Hub confirmando el tag `1`, 212.3 MB, digest `sha256:f6613a402...`.
 
-*(Nota de formato: estas son transcripciones de comandos+resultados, no capturas de pantalla nativas de la terminal. Sirven como evidencia técnica real, pero si se requieren capturas de pantalla literales de la ventana de PowerShell, hay que re-ejecutar estos mismos comandos manualmente para fotografiarlas.)*
+*(Nota de formato: la mayoría de estas son transcripciones de comandos+resultados, no capturas de pantalla nativas de la terminal, salvo la de Docker Hub que sí es una captura de navegador real. Las transcripciones sirven como evidencia técnica real, pero si se requieren capturas de pantalla literales de la ventana de PowerShell, hay que re-ejecutar estos mismos comandos manualmente para fotografiarlas.)*
 
 ## 6. Pendiente
 
-1. `docker login` (el usuario debe ejecutarlo — no se manejan credenciales por este medio) → `docker tag`/`push` de `demo-micro:1` a `jhont3/demo-micro:1` en Docker Hub.
-2. Revisión del usuario de los 5 commits locales → `git push` a `Jhont3/micro-calc-k8s`.
-3. `minikube start --driver=docker --cpus=2 --memory=4000` → `kubectl create namespace reto5` → `kubectl apply -f k8s/`.
-4. Prueba post-despliegue vía `kubectl port-forward` (y bono `minikube service --url`, `minikube dashboard`), confirmando que `/` muestra los valores del ConfigMap y no los defaults locales.
-5. Captura final de evidencias y ensamblado del PDF (skill `pdf`).
+1. Revisión del usuario de los commits locales → `git push` a `Jhont3/micro-calc-k8s`.
+2. `minikube start --driver=docker --cpus=2 --memory=4000` → `kubectl create namespace reto5` → `kubectl apply -f k8s/`.
+3. Prueba post-despliegue vía `kubectl port-forward` (y bono `minikube service --url`, `minikube dashboard`), confirmando que `/` muestra los valores del ConfigMap y no los defaults locales.
+4. Captura final de evidencias y ensamblado del PDF (skill `pdf`).
 
 ## 7. Observaciones generales
 
