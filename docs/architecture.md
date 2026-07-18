@@ -45,7 +45,7 @@ flowchart TB
     end
 
     HUB[("Docker Hub<br/>jhont3/demo-micro:1<br/>repositorio público")]
-    GH[("GitHub · privado<br/>Jhont3/micro-calc-k8s")]
+    GH[("GitHub · público<br/>Jhont3/micro-calc-k8s")]
     CLI["👤 Navegador / PowerShell"]
 
     IMG -- "docker push" --> HUB

@@ -166,7 +166,7 @@ Esto demuestra la configuración externalizada de extremo a extremo: misma image
 ## 6. Pendiente
 
 1. ~~`git push` a `Jhont3/micro-calc-k8s`~~ — **hecho** (2026-07-18, historial verificado sin credenciales antes del push).
-2. Decidir el acceso del docente al repo **privado** al momento de entregar: hacerlo público, o invitarlo como colaborador — la URL sola no le dará acceso.
+2. ~~Decidir el acceso del docente al repo privado~~ — **hecho** (2026-07-18): el repositorio se hizo **público**; la URL basta para revisarlo.
 3. ~~Ensamblado del PDF final con todas las evidencias~~ — **hecho** (`docs/Reto5_Evidencias_Jhonatan_Escobar.pdf`); las evidencias por transcripción de la nota de §5 fueron reemplazadas por capturas de pantalla reales (ventanas de PowerShell, Docker Desktop, Chrome) re-ejecutando el flujo completo, guardadas en `docs/capturas/`.
 
 ## 7. Observaciones generales
