@@ -1,6 +1,6 @@
 # Reporte — Reto 5: Docker, Docker Hub y Despliegue en Minikube sobre Windows
 
-> **Estado: despliegue completado y validado.** Pendientes: `git push` (esperando revisión del propietario) y ensamblado del PDF final. Este documento es la base para el PDF con capturas, comandos y explicación de resultados.
+> **Estado: entregado.** Push a `main` realizado (2026-07-18), capturas de pantalla nativas re-tomadas en [`docs/capturas/`](capturas/) y PDF final generado (`docs/Reto5_Evidencias_Jhonatan_Escobar.pdf`).
 
 ## 1. Descripción del reto
 
@@ -10,14 +10,14 @@ Tomar el microservicio Spring Boot base [`gmacastil/micro-calc`](https://github.
 
 | # | Entregable (según `final.md`) | Estado |
 |---|---|---|
-| 1 | URL del repositorio usado o fork del repositorio base | Repo privado creado: `https://github.com/Jhont3/micro-calc-k8s` (no es un fork nativo — ver §4). Pendiente `git push`. |
+| 1 | URL del repositorio usado o fork del repositorio base | **Hecho** — repo privado publicado: `https://github.com/Jhont3/micro-calc-k8s` (no es un fork nativo — ver §4). |
 | 2 | Dockerfile funcional | Hecho y validado localmente. |
 | 3 | Imagen publicada en Docker Hub | **Hecho** — [`jhont3/demo-micro:1`](https://hub.docker.com/r/jhont3/demo-micro), 212.3 MB, digest `sha256:f6613a402...`. |
 | 4 | Carpeta `k8s/` con manifiestos YAML | Hecho (raíz del repo, no anidada). |
 | 5 | Evidencias de ejecución local con Docker | Hecho — ver §5. |
 | 6 | Evidencias de despliegue en Minikube | **Hecho** — pod `Running 1/1` en namespace `reto5`, imagen jalada desde Docker Hub; ver §5. |
 | 7 | Evidencias de prueba del microservicio | **Hecho** — todos los endpoints probados vía `kubectl port-forward` y vía `minikube service --url` (PowerShell y navegador); `/` confirma los valores del ConfigMap. |
-| 8 | PDF final con capturas, comandos y explicación | Pendiente — este documento es su borrador base. |
+| 8 | PDF final con capturas, comandos y explicación | **Hecho** — `docs/Reto5_Evidencias_Jhonatan_Escobar.pdf`, con 12 capturas de pantalla nativas (`docs/capturas/`). |
 
 ## 3. Requisitos previos verificados en el entorno
 
@@ -165,9 +165,9 @@ Esto demuestra la configuración externalizada de extremo a extremo: misma image
 
 ## 6. Pendiente
 
-1. Revisión del usuario de los commits locales → `git push` a `Jhont3/micro-calc-k8s` → captura de la página del repo en GitHub.
+1. ~~`git push` a `Jhont3/micro-calc-k8s`~~ — **hecho** (2026-07-18, historial verificado sin credenciales antes del push).
 2. Decidir el acceso del docente al repo **privado** al momento de entregar: hacerlo público, o invitarlo como colaborador — la URL sola no le dará acceso.
-3. Ensamblado del PDF final (skill `pdf`) con todas las evidencias.
+3. ~~Ensamblado del PDF final con todas las evidencias~~ — **hecho** (`docs/Reto5_Evidencias_Jhonatan_Escobar.pdf`); las evidencias por transcripción de la nota de §5 fueron reemplazadas por capturas de pantalla reales (ventanas de PowerShell, Docker Desktop, Chrome) re-ejecutando el flujo completo, guardadas en `docs/capturas/`.
 
 ## 7. Observaciones generales
 
